@@ -9,3 +9,6 @@ en terminal
 
  despues de crear activar en terminal
  .\.venv\Scripts\activate
+
+ INSTALAR requiremwnts.txt en terminal
+ pip install -r requirements.txt
