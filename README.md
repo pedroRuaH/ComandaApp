@@ -43,17 +43,4 @@ python -m venv .venv
 pip install -r requirements.txt
 
 **Notas**
-- El archivo .env no se comparte por seguridad. 
-- Para probar con una base de datos local es necesario tener postgres instalado y crear una base de datos.
-- Puedes remplazar la base de datos en settings si quieres probar con esta plantilla, solo copia y pega
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Nombre de mi DB',  
-        'USER': 'postgres',  # Regularmente el usuario postgres por default
-        'PASSWORD': 'tu contraseña',  
-        'HOST': 'localhost',  # Localhost es default
-        'PORT': '5432',  # Puerto default de postgres
-    }
-}
+- usa el archivo .env.example para crear un .env para el proyecto
