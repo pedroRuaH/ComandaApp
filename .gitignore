@@ -21,7 +21,6 @@ db.sqlite3
 db.sqlite3-journal
 
 # Media and Static (match at any depth)
-media/
 collectstatic/
 staticfiles/
 
