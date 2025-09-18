@@ -37,3 +37,23 @@ python -m venv .venv
 
 pip install -r requirements.txt
 
+4. **Comandos para migrar a BD**
+- python manage.py makemigrations
+- python manage.py migrate
+
+5. **Agrega datos a la bd**
+- cd comanda_app
+- python manage.py createsuperuser
+- python manage.py loaddata initial_data.json
+- python manage.py loaddata items.json
+
+si quieres borrar los datos usa el comando:
+- python manage.py flush
+solo requerda que este comando borra el superuser y hay que crearlo de nuevo
+
+6. **Run Server**
+localhost server http://127.0.0.1:8000/
+- python manage.py runserver
+
+- python manage.py runserver 0.0.0.0:8000
+

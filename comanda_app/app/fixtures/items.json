@@ -1,0 +1,239 @@
+[
+    {
+      "model": "app.item",
+      "pk": 1,
+      "fields": {
+        "name": "Pizza Margarita",
+        "description": "Pizza clásica con salsa de tomate, queso mozzarella y albahaca fresca.",
+        "size": "chica",
+        "price": "90.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 2,
+      "fields": {
+        "name": "Pizza Margarita",
+        "description": "Pizza clásica con salsa de tomate, queso mozzarella y albahaca fresca.",
+        "size": "mediana",
+        "price": "120.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 3,
+      "fields": {
+        "name": "Pizza Margarita",
+        "description": "Pizza clásica con salsa de tomate, queso mozzarella y albahaca fresca.",
+        "size": "grande",
+        "price": "150.00",
+        "available": true
+      }
+    },
+  
+    {
+      "model": "app.item",
+      "pk": 4,
+      "fields": {
+        "name": "Pizza Pepperoni",
+        "description": "Pizza con salsa de tomate, queso mozzarella y pepperoni.",
+        "size": "chica",
+        "price": "105.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 5,
+      "fields": {
+        "name": "Pizza Pepperoni",
+        "description": "Pizza con salsa de tomate, queso mozzarella y pepperoni.",
+        "size": "mediana",
+        "price": "140.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 6,
+      "fields": {
+        "name": "Pizza Pepperoni",
+        "description": "Pizza con salsa de tomate, queso mozzarella y pepperoni.",
+        "size": "grande",
+        "price": "175.00",
+        "available": true
+      }
+    },
+  
+    {
+      "model": "app.item",
+      "pk": 7,
+      "fields": {
+        "name": "Pizza Hawaiana",
+        "description": "Pizza con jamón, piña, salsa de tomate y queso mozzarella.",
+        "size": "chica",
+        "price": "110.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 8,
+      "fields": {
+        "name": "Pizza Hawaiana",
+        "description": "Pizza con jamón, piña, salsa de tomate y queso mozzarella.",
+        "size": "mediana",
+        "price": "145.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 9,
+      "fields": {
+        "name": "Pizza Hawaiana",
+        "description": "Pizza con jamón, piña, salsa de tomate y queso mozzarella.",
+        "size": "grande",
+        "price": "180.00",
+        "available": true
+      }
+    },
+  
+    {
+      "model": "app.item",
+      "pk": 10,
+      "fields": {
+        "name": "Pizza Mexicana",
+        "description": "Pizza con chorizo, jalapeño, cebolla, salsa de tomate y queso mozzarella.",
+        "size": "chica",
+        "price": "115.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 11,
+      "fields": {
+        "name": "Pizza Mexicana",
+        "description": "Pizza con chorizo, jalapeño, cebolla, salsa de tomate y queso mozzarella.",
+        "size": "mediana",
+        "price": "150.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 12,
+      "fields": {
+        "name": "Pizza Mexicana",
+        "description": "Pizza con chorizo, jalapeño, cebolla, salsa de tomate y queso mozzarella.",
+        "size": "grande",
+        "price": "185.00",
+        "available": true
+      }
+    },
+  
+    {
+      "model": "app.item",
+      "pk": 13,
+      "fields": {
+        "name": "Pizza Cuatro Quesos",
+        "description": "Pizza con mezcla de quesos mozzarella, gouda, parmesano y azul.",
+        "size": "chica",
+        "price": "120.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 14,
+      "fields": {
+        "name": "Pizza Cuatro Quesos",
+        "description": "Pizza con mezcla de quesos mozzarella, gouda, parmesano y azul.",
+        "size": "mediana",
+        "price": "155.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 15,
+      "fields": {
+        "name": "Pizza Cuatro Quesos",
+        "description": "Pizza con mezcla de quesos mozzarella, gouda, parmesano y azul.",
+        "size": "grande",
+        "price": "190.00",
+        "available": true
+      }
+    },
+  
+    {
+      "model": "app.item",
+      "pk": 16,
+      "fields": {
+        "name": "Pizza Vegetariana",
+        "description": "Pizza con pimientos, champiñones, cebolla, aceitunas y queso mozzarella.",
+        "size": "chica",
+        "price": "105.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 17,
+      "fields": {
+        "name": "Pizza Vegetariana",
+        "description": "Pizza con pimientos, champiñones, cebolla, aceitunas y queso mozzarella.",
+        "size": "mediana",
+        "price": "135.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 18,
+      "fields": {
+        "name": "Pizza Vegetariana",
+        "description": "Pizza con pimientos, champiñones, cebolla, aceitunas y queso mozzarella.",
+        "size": "grande",
+        "price": "165.00",
+        "available": true
+      }
+    },
+  
+    {
+      "model": "app.item",
+      "pk": 19,
+      "fields": {
+        "name": "Pizza Suprema",
+        "description": "Pizza con pepperoni, jamón, pimientos, cebolla, aceitunas y queso mozzarella.",
+        "size": "chica",
+        "price": "125.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 20,
+      "fields": {
+        "name": "Pizza Suprema",
+        "description": "Pizza con pepperoni, jamón, pimientos, cebolla, aceitunas y queso mozzarella.",
+        "size": "mediana",
+        "price": "160.00",
+        "available": true
+      }
+    },
+    {
+      "model": "app.item",
+      "pk": 21,
+      "fields": {
+        "name": "Pizza Suprema",
+        "description": "Pizza con pepperoni, jamón, pimientos, cebolla, aceitunas y queso mozzarella.",
+        "size": "grande",
+        "price": "195.00",
+        "available": true
+      }
+    }
+  ]
