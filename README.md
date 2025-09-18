@@ -17,6 +17,7 @@ Comanda App es un proyecto de software enfocado en proveer una solución para re
 
 - Gestión de órdenes y comandas
 - Notificaciones internas para el flujo de pedidos
+- Este archivo tiene integrado db.sqlite3 
 
 
 ## Instalación
@@ -36,5 +37,3 @@ python -m venv .venv
 
 pip install -r requirements.txt
 
-**Notas**
-- usa el archivo .env.example para crear un .env para el proyecto
