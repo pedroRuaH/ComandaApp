@@ -17,12 +17,7 @@ __pycache__/
 
 # Django
 local_settings.py
-db.sqlite3
-db.sqlite3-journal
 
-# Media and Static (match at any depth)
-collectstatic/
-staticfiles/
 
 # Logs and reports
 *.log

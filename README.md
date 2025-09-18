@@ -17,13 +17,7 @@ Comanda App es un proyecto de software enfocado en proveer una solución para re
 
 - Gestión de órdenes y comandas
 - Notificaciones internas para el flujo de pedidos
-- Integración con base de datos en AWS
 
-## Requisitos
-
-- Python 3.8+
-- PostgreSQL
-- Entorno virtual de Python
 
 ## Instalación
 
