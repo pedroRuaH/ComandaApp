@@ -6,43 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="{% static 'bootstrap-css/bootstrap.min.css' %}">
-    <style>
-        body {
-            min-height: 100vh;
-            background: url("{% static 'images/loginbg.jpg' %}") no-repeat center center;
-            background-size: cover;
-        }
-    </style>
+    <link rel="stylesheet" href="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
 </head>
 <body>
-    <div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-        <div class="col-md-6">
-            <div class="card border-0 p-4" style="box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); background-color: rgba(255, 255, 255, 0.9); border-radius: 12px;">
-                <div class="card-header text-center bg-transparent">
-                    <h2 class="text-dark">Welcome Back</h2>
-                    <p class="text-muted">Please login to your account</p>
-                </div>
-                <div class="card-body">
-                    {% if error %}
-                        <div class="alert alert-danger text-center">
-                            {{ error }}
-                        </div>
-                    {% endif %}
-                    <form method="post">
-                        {% csrf_token %}
-                        <div class="form-floating mb-4">
-                            <input type="text" id="id_username" name="username" class="form-control rounded-3" placeholder="Username" required autofocus>
-                            <label for="id_username">Username</label>
-                        </div>
-                        <div class="form-floating mb-4">
-                            <input type="password" id="id_password" name="password" class="form-control rounded-3" placeholder="Password" required>
-                            <label for="id_password">Password</label>
-                        </div>
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary rounded-3">Login</button>
-                        </div>
-                    </form>
-                </div>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="card">
+            <div class="card-header text-center bg-transparent">
+                <h2 class="text-dark">Bienvenido</h2>
+                <p class="text-muted">Por favor, inicie sesión en su cuenta</p>
+            </div>
+            <div class="card-body">
+                {% if error %}
+                    <div class="alert alert-danger text-center">
+                        {{ error }}
+                    </div>
+                {% endif %}
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-floating mb-4">
+                        <input type="text" id="id_username" name="username" class="form-control rounded-3" placeholder="Username" required autofocus>
+                        <label for="id_username">Username</label>
+                    </div>
+                    <div class="form-floating mb-4">
+                        <input type="password" id="id_password" name="password" class="form-control rounded-3" placeholder="Password" required>
+                        <label for="id_password">Password</label>
+                    </div>
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary rounded-3">Login</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

@@ -8,6 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'bootstrap-css/bootstrap.min.css' %}">
     <link rel="stylesheet" href="{% static 'bootstrap-icons/font/bootstrap-icons.css' %}">
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
 </head>
 <body>
     <div class="container d-flex justify-content-center align-items-center vh-100">
@@ -15,13 +16,9 @@
             <h1 class="display-4">Bienvenido a Comanda App</h1>
             <p class="lead">La solucion para tus ordenes.</p>
             <hr class="my-4">
-            <p>Please log in to access the system.</p>
+            <p>Porfavor inicie sesion para entrar al sistema.</p>
             <a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Login</a>
         </div>
     </div>
-
-    <!-- Bootstrap JS Bundle -->
-    <script src="{% static 'bootstrap-js/bootstrap.bundle.min.js' %}"></script>
-    <script src="{% static 'bootstrap-js/jquery.min.js' %}"></script>
 </body>
 </html>
