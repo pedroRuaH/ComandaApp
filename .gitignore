@@ -1,0 +1,50 @@
+# Environment
+.env
+.env.* 
+!.env.example
+venv/
+.venv/
+env/
+env.bak
+venv.bak
+.python-version
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Django
+local_settings.py
+
+
+# Logs and reports
+*.log
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.cache/
+.pytest_cache/
+
+# Type checkers / linters / test envs
+.mypy_cache/
+.pytype/
+.pyright/
+.ruff_cache/
+.tox/
+.nox/
+.pyre/
+
+# IDEs and OS
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+
+# Node (if ever used)
+node_modules/
+*.tsbuildinfo
