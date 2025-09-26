@@ -1,32 +1,14 @@
-from flask import Flask
-from config import Config
-from models import db
-from auth.routes import auth_bp
-from flask import render_template, redirect, url_for, session
+from flask import Flask, render_template
 
-def create_app():
-    app = Flask(__name__)
-    app.config.from_object(Config)
-    db.init_app(app)
+app = Flask(__name__)
 
-    with app.app_context():
-        db.create_all()
+@app.route("/")
+def home():
+    return render_template(
+        "index.html",
+        titulo="<NombreDelProyecto> API",
+        mensaje="¡Bienvenido a <proyecto>!"
+    )
 
-    app.register_blueprint(auth_bp)
-
-    @app.route('/', methods=['GET'])
-    def home():
-        return render_template('home.html')
-    
-    @app.route('/dashboard')
-    def dashboard():
-        if not session.get('user_authenticated'):
-            return redirect(url_for('auth.login'))
-        return render_template('dashboard.html', username=session.get('username'))
-    
-    return app
- 
-
-if __name__ == '__main__':
-    app = create_app()
+if __name__ == "__main__":
     app.run(debug=True)
