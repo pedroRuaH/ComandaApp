@@ -4,11 +4,11 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
 def home():
-    return redirect(url_for('index'))
+    return redirect(url_for('JesusDev'))
 
-@app.route('/index', methods=['GET'])
-def index():
-    return render_template('index.html', title='Index Page')
+@app.route('/JesusDev', methods=['GET'])
+def JesusDev():
+    return render_template('JesusDev.html', title='JesusDev Page')
 
 @app.route('/login', methods=['GET'])
 def login():
