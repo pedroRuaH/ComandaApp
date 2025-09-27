@@ -49,4 +49,6 @@ Thumbs.db
 node_modules/
 *.tsbuildinfo
 
-#Test output
+#bd
+*.sqlite3
+*.db
