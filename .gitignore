@@ -48,3 +48,8 @@ Thumbs.db
 # Node (if ever used)
 node_modules/
 *.tsbuildinfo
+
+#bd
+instance/
+*.sqlite3
+*.db

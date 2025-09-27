@@ -15,7 +15,7 @@
         <div class="container-fluid">
             <a class="navbar-brand text-white fw-bold" href="#">Comanda App</a>
             <div class="nav-btns-container">
-                <a class="nav-btn" href="{{ url_for('login') }}" role="button">Inicio</a>
+                <a class="nav-btn" href="{{ url_for('auth.login') }}" role="button">Inicio</a>
                 <a class="nav-btn" href="#">Menú</a>
                 <a class="nav-btn" href="#">Reservas</a>
                 <a class="nav-btn" href="#">Contacto</a>
@@ -25,16 +25,6 @@
     </nav>
 
     <div class="home-bg-container">
-<<<<<<< HEAD
-
-=======
-    </div>
-    <div class="d-flex flex-column align-items-center justify-content-center" style="height:100vh;">
-        <h1 class="mb-4">Bienvenido a Comanda App</h1>
-        <a href="{{ url_for('login') }}" class="btn btn-primary btn-lg">
-            Iniciar Sesión
-        </a>
->>>>>>> e222a65c439141232953f5f823bc761b4f32d198
     </div>
     <script src="{{ url_for('static', filename='bootstrap-js/bootstrap.bundle.min.js') }}"></script>
 </body>

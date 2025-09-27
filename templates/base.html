@@ -27,7 +27,7 @@
                             <a class="nav-link" href="{{ url_for('main.users') }}">Usuarios</a>
                         </li>
                         <li class="nav-item">
-                            <form method="post" action="{{ url_for('logout') }}" style="display:inline;">
+                            <form method="post" action="{{ url_for('auth.logout') }}" style="display:inline;">
                                 <button type="submit" class="btn btn-link nav-link" style="display:inline; padding:0;">
                                     <i class="bi bi-box-arrow-right"></i> Logout
                                 </button>
