@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="conatainer">
+    <h2>Bienvenido, {{ username }}</h2>
+    <form method="post" action="{{ url_for('auth.logout') }}">
+        <button type=""submit" class="btn btn-danger">Cerrar Sesion</button>
+    </form>
+</div>
+{% endblock %}
