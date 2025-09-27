@@ -27,6 +27,14 @@ def create_app():
             return redirect(url_for('auth.login'))
         return render_template('dashboard.html', username=session.get('username'))
     
+    @app.route('/JesusDev', methods=['GET'])
+    def JesusDev():
+        return render_template('JesusDev.html', title='JesusDev Page')
+
+    @app.route('/MarioDev', methods=['GET'])
+    def MarioDev():
+        return render_template('MarioDev.html', title='MarioDev')
+    
     return app
  
 
