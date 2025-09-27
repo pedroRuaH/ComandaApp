@@ -1,5 +1,6 @@
 html, body {
     overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .home-bg-container {
@@ -7,7 +8,7 @@ html, body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: url("../images/homebg.jpg") no-repeat center center;
+    background: url("../images/homebg.png") no-repeat center center;
     background-size: cover;
 }
 
