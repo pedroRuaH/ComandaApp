@@ -50,5 +50,6 @@ node_modules/
 *.tsbuildinfo
 
 #bd
+instance/
 *.sqlite3
 *.db
