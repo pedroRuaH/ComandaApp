@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 
 app = Flask(__name__)
 
@@ -8,10 +8,6 @@ def MarioDev():
 
 @app.route('/home', methods=['GET'])
 def home():
-    return render_template('home.html', title='Home Page')
-@app.route('/MarioDev', methods=['GET'])
-def mario_dev():
-    return render_template('MarioDev.html', title='MarioDev')
 
 @app.route('/login', methods=['GET'])
 def login():
@@ -19,5 +15,3 @@ def login():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    
-    
