@@ -2,6 +2,7 @@ from flask import Flask
 from config import Config
 from models import db
 from auth.routes import auth_bp
+from main.routes import main_bp
 from flask import render_template, redirect, url_for, session
 
 def create_app():
@@ -13,6 +14,7 @@ def create_app():
         db.create_all()
 
     app.register_blueprint(auth_bp)
+    app.register_blueprint(main_bp)
 
     @app.route('/', methods=['GET'])
     def home():

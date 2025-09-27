@@ -23,7 +23,7 @@ def register():
             db.session.add(user)
             db.session.commit()
             return redirect(url_for('auth.login'))
-        return render_template('register.html', error=error)
+    return render_template('register.html', error=error)
     
 @auth_bp.route('/login', methods=['GET', 'POST'])
 def login():
