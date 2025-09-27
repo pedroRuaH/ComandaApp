@@ -26,14 +26,23 @@ def create_app():
         if not session.get('user_authenticated'):
             return redirect(url_for('auth.login'))
         return render_template('dashboard.html', username=session.get('username'))
-    
-    @app.route('/JesusDev', methods=['GET'])
-    def JesusDev():
-        return render_template('profiles/JesusDev.html', title='JesusDev Page')
 
-    @app.route('/MarioDev', methods=['GET'])
-    def MarioDev():
-        return render_template('profiles/MarioDev.html', title='MarioDev')
+    @app.route('/jesus_profile', methods=['GET'])
+    def jesus_profile():
+        return render_template('profiles/jesus_profile.html', title='JesusDev Page')
+
+    @app.route('/mario_profile', methods=['GET'])
+    def mario_profile():
+        return render_template('profiles/mario_profile.html', title='MarioDev')
+
+    @app.route('/pedro_profile', methods=['GET'])
+    def pedro_profile():
+        return render_template('profiles/pedro_profile.html', title='Pedro Profile')
+    
+    @app.route('/rafa_profile', methods=['GET'])
+    def rafa_profile():
+        return render_template('profiles/rafa_profile.html', title='Rafa Profile')
+
 
     return app
  

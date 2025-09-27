@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block title %}Perfil Mario{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+  body {
+    background-image: url("{{ url_for('static', filename='images/Background.png') }}");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+  }
+  .card-overlay {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    margin: auto;
+  }
+  .profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+  }
+  .logo {
+    width: 100px;
+    height: auto;
+  }
+  .btn {
+    margin: 5px;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-center align-items-center" style="min-height:80vh;">
+  <div class="card-overlay text-center">
+    <!-- Logo CESUN -->
+    <div class="d-flex justify-content-center mb-3">
+      <img src="{{ url_for('static', filename='images/cesun_logo.png') }}" class="logo" alt="CESUN Logo">
+    </div>
+    <!-- Foto y nombre -->
+    <img src="{{ url_for('static', filename='images/FotoMarioDev.jpg') }}" class="profile-img mb-3" alt="Foto de Mario">
+    <h2 class="fw-bold">Mario Quiñones</h2>
+    <p class="text-muted">Estudiante de Ingeniería en Desarrollo de Software - CESUN</p>
+    <!-- Información -->
+    <div class="mt-3 text-start">
+      <p><strong>Matrícula:</strong> MRDX24002</p>
+      <p><strong>Email:</strong> mario.quinones@cesunbc.edu.mx</p>
+      <p><strong>Teléfono:</strong> +52 664 123 4567</p>
+    </div>
+    <!-- Botón de contacto -->
+    <div class="container text-center" style="margin-top:20px;">
+      <a href="https://facebook.com/mario.quinones" target="_blank" class="btn btn-primary">
+        <i class="fa fa-facebook"></i>
+      </a>
+      <a href="https://instagram.com/marioquinones" target="_blank" class="btn btn-danger">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/5216641234567" target="_blank" class="btn btn-success">
+        <i class="fa fa-whatsapp"></i>
+      </a>
+      <a href="tel:+5216641234567" class="btn btn-info">
+        <i class="fa fa-phone"></i>
+      </a>
+      <a href="mailto:mario.quinones@cesunbc.edu.mx" class="btn btn-warning">
+        <i class="fa fa-envelope"></i>
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
