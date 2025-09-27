@@ -6,12 +6,17 @@
         <div class="col-md-8 text-center">
             <h2 class="mb-4">Bienvenido, {{ username }}</h2>
             <div class="mb-4">
-                <a href="{{ url_for('JesusDev') }}" class="btn btn-outline-primary mx-2">
+                <a href="{{ url_for('jesus_profile') }}" class="btn btn-outline-primary mx-2">
                     Perfil JesusDev
                 </a>
-                <a href="{{ url_for('MarioDev') }}" class="btn btn-outline-success mx-2">
+                <a href="{{ url_for('mario_profile') }}" class="btn btn-outline-success mx-2">
                     Perfil MarioDev
                 </a>
+                <a href="{{ url_for('pedro_profile') }}" class="btn btn-outline-info mx-2">
+                    Perfil Pedro
+                </a>
+                <a href="{{ url_for('rafa_profile') }}" class="btn btn-outline-warning mx-2">
+                    Perfil Rafa
             </div>
             <form method="post" action="{{ url_for('auth.logout') }}">
                 <button type="submit" class="btn btn-danger">Cerrar Sesión</button>
