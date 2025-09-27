@@ -29,12 +29,12 @@ def create_app():
     
     @app.route('/JesusDev', methods=['GET'])
     def JesusDev():
-        return render_template('JesusDev.html', title='JesusDev Page')
+        return render_template('profiles/JesusDev.html', title='JesusDev Page')
 
     @app.route('/MarioDev', methods=['GET'])
     def MarioDev():
-        return render_template('MarioDev.html', title='MarioDev')
-    
+        return render_template('profiles/MarioDev.html', title='MarioDev')
+
     return app
  
 
