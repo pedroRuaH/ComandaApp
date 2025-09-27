@@ -3,12 +3,11 @@ from flask import Flask, render_template, redirect, url_for
 app = Flask(__name__)
 
 @app.route('/', methods=['GET'])
-def home():
-    return redirect(url_for('JesusDev'))
+def MarioDev():
+    return render_template('MarioDev.html', title='MarioDev')
 
-@app.route('/JesusDev', methods=['GET'])
-def JesusDev():
-    return render_template('JesusDev.html', title='JesusDev Page')
+@app.route('/home', methods=['GET'])
+def home():
 
 @app.route('/login', methods=['GET'])
 def login():
