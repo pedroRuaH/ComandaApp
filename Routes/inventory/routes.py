@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from src.models import db, Inventory, Entry, Movement
+from src.models import db, Inventory, Product, Movement
 
 inventory_bp = Blueprint("inventory", __name__, url_prefix="/inventory")
 
@@ -9,21 +9,32 @@ def show_inventory():
     items = Inventory.query.all()
     return render_template("inventory.html", items=items)
 
-# Registrar entrada
-@inventory_bp.route("/add_entry", methods=["POST"])
-def add_entry():
-    product_id = request.form["product_id"]
-    quantity = int(request.form["quantity"])
+#  Registrar un nuevo producto
+@inventory_bp.route("/add_product", methods=["POST"])
+def add_product():
+    name = request.form["name"]
+    description = request.form.get("description", "")
+    price = float(request.form["price"])
+    category = request.form.get("category", "general")
+    unit = request.form.get("unit", "pieza")
 
-    # Crear entrada
-    new_entry = Entry(product_id=product_id, quantity=quantity)
-    db.session.add(new_entry)
-
-    # Actualizar inventario
-    product = Inventory.query.get(product_id)
-    product.quantity += quantity
-
+    # 1. Crear registro en Inventario
+    inventory_item = Inventory(product_name=name, quantity=0, unit=unit)
+    db.session.add(inventory_item)
     db.session.commit()
+
+    # 2. Crear registro en Productos
+    new_product = Product(
+        name=name,
+        description=description,
+        price=price,
+        category=category,
+        available=True,
+        inventory_id=inventory_item.id
+    )
+    db.session.add(new_product)
+    db.session.commit()
+
     return redirect(url_for("inventory.show_inventory"))
 
 # Registrar movimiento
