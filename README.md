@@ -39,3 +39,46 @@ pip install -r requirements.txt
 
 
 
+erDiagram
+    User {
+        int id PK
+        string username UK
+        string password
+    }
+
+    Inventory {
+        int id PK
+        string product_name
+        string unit
+        int quantity
+    }
+
+    Movement {
+        int id PK
+        int product_id FK
+        string movement_type
+        int quantity
+        datetime date
+    }
+
+    Product {
+        int id PK
+        string name
+        string description
+        float price
+        string category
+        bool available
+        int inventory_id FK
+    }
+
+    Drink {
+        int id PK
+        string name
+        string description
+        float price
+        string size
+        bool available
+    }
+
+    Inventory ||--o{ Movement : "has movements"
+    Inventory ||--o{ Product : "has products"
