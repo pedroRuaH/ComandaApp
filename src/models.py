@@ -12,8 +12,8 @@ class Inventory(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     product_name = db.Column(db.String(100), nullable=False)
-    quantity = db.Column(db.Integer, default=0)
     unit = db.Column(db.String(20), nullable=False)  # Ej: kg, piezas
+    quantity = db.Column(db.Integer, default=0)
 
     # Relación con movimientos
     movements = db.relationship("Movement", backref="inventory", lazy=True)
