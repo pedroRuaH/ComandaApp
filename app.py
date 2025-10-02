@@ -1,7 +1,7 @@
 # importar dependencias
 from flask import Flask
 from config import Config
-from models import db
+from src.models import db
 from auth.routes import auth_bp
 from main.routes import main_bp
 from flask import render_template, redirect, url_for, session
