@@ -1,7 +1,8 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
-from models import db, User
+from src.models import db, User
 
 auth_bp = Blueprint('auth', __name__)
+
 
 @auth_bp.route('/register', methods=['GET', 'POST'])
 def register():
@@ -40,3 +41,4 @@ def logout():
     session.clear()
     flash('Sesión cerrada.', 'info')
     return redirect(url_for('home'))
+

@@ -1,9 +1,10 @@
 # importar dependencias
 from flask import Flask
 from config import Config
-from models import db
-from auth.routes import auth_bp
-from main.routes import main_bp
+from src.models import db, Inventory, Entry, Movement
+from Routes.auth.routes import auth_bp
+from Routes.main.routes import main_bp
+from Routes.inventory.routes import inventory_bp
 from flask import render_template, redirect, url_for, session
 
 def create_app():
@@ -16,6 +17,7 @@ def create_app():
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(main_bp)
+    app.register_blueprint(inventory_bp)
 
     @app.route('/', methods=['GET'])
     def home():
@@ -26,6 +28,10 @@ def create_app():
         if not session.get('user_authenticated'):
             return redirect(url_for('auth.login'))
         return render_template('dashboard.html', username=session.get('username'))
+    
+    @app.route('/inventory', methods=['GET'])
+    def inventory():
+        return render_template('inventory.html', title='inventory')
 
     @app.route('/jesus_profile', methods=['GET'])
     def jesus_profile():
