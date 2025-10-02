@@ -1,0 +1,39 @@
+/* Estilos modernos para la navbar oscura */
+.navbar {
+    background: linear-gradient(135deg, #1a1a1a 0%, #333 100%); /* Gradiente oscuro */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fff !important;
+}
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+.navbar-nav .nav-link:hover {
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+.navbar-toggler {
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.btn-link {
+    color: rgba(255, 255, 255, 0.9) !important;
+    text-decoration: none;
+}
+.btn-link:hover {
+    color: #fff !important;
+}
+
+.navbar .navbar-nav {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
