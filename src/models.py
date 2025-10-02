@@ -38,3 +38,14 @@ class Movement(db.Model):
     movement_type = db.Column(db.String(20), nullable=False)  # entrada o salida
     quantity = db.Column(db.Integer, nullable=False)
     date = db.Column(db.DateTime, server_default=db.func.now())
+    
+    
+class Drink(db.Model):
+    _tablename_ = "drinks"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)        # Nombre de la bebida (ej. Coca-Cola)
+    description = db.Column(db.String(200))                 # Descripción opcional
+    price = db.Column(db.Float, nullable=False)             # Precio de venta
+    size = db.Column(db.String(50), nullable=True)          # Tamaño (ej. 355ml, 600ml, Litro)
+    available = db.Column(db.Boolean, default=True)         # Si está disponible en el menú
