@@ -19,15 +19,7 @@ class Inventory(db.Model):
     movements = db.relationship("Movement", backref="inventory", lazy=True)
 
 
-class Entry(db.Model):
-    __tablename__ = "entries"
 
-    id = db.Column(db.Integer, primary_key=True)
-    product_id = db.Column(db.Integer, db.ForeignKey("inventory.id"), nullable=False)
-    quantity = db.Column(db.Integer, nullable=False)
-    date = db.Column(db.DateTime, server_default=db.func.now())
-
-    product = db.relationship("Inventory", backref="entries")
 
 
 class Movement(db.Model):
@@ -39,7 +31,21 @@ class Movement(db.Model):
     quantity = db.Column(db.Integer, nullable=False)
     date = db.Column(db.DateTime, server_default=db.func.now())
     
-    
+# Productos que se registran en el sistema (menú, ingredientes, etc.)
+class Product(db.Model):
+    __tablename__ = "products"
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(100), nullable=False)   # Nombre del producto
+    description = db.Column(db.String(200))            # Descripción opcional
+    price = db.Column(db.Float, nullable=False)        # Precio de venta
+    category = db.Column(db.String(50), nullable=True) # Ej: bebida, comida, postre
+    available = db.Column(db.Boolean, default=True)    # Si está disponible
+
+    # Relación con inventario
+    inventory_id = db.Column(db.Integer, db.ForeignKey("inventory.id"), nullable=True)
+    inventory = db.relationship("Inventory", backref="products")
+       
 class Drink(db.Model):
     _tablename_ = "drinks"
 
