@@ -2,9 +2,9 @@
 from flask import Flask
 from config import Config
 from src.models import db, Inventory, Entry, Movement
-from auth.routes import auth_bp
-from main.routes import main_bp
-from inventory.routes import inventory_bp
+from Routes.auth.routes import auth_bp
+from Routes.main.routes import main_bp
+from Routes.inventory.routes import inventory_bp
 from flask import render_template, redirect, url_for, session
 
 def create_app():
