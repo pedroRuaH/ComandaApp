@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inventario - Restaurante</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">🍽 Restaurante</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h2 class="fw-bold text-primary">Inventario</h2>
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addEntryModal">
+        ➕ Nueva Entrada
+      </button>
+    </div>
+
+    <!-- TABLA DE INVENTARIO -->
+    <div class="card shadow">
+      <div class="card-body">
+        <table class="table table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th>ID</th>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Unidad</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for item in items %}
+            <tr>
+              <td>{{ item.id }}</td>
+              <td>{{ item.product_name }}</td>
+              <td>{{ item.quantity }}</td>
+              <td>{{ item.unit }}</td>
+              <td>
+                <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#movementModal"
+                        data-id="{{ item.id }}" data-name="{{ item.product_name }}">
+                  ➡ Movimiento
+                </button>
+              </td>
+            </tr>
+            {% else %}
+            <tr>
+              <td colspan="5" class="text-center text-muted">No hay productos en el inventario</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL NUEVA ENTRADA -->
+  <div class="modal fade" id="addEntryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content shadow-lg">
+        <div class="modal-header bg-success text-white">
+          <h5 class="modal-title">Nueva Entrada</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form method="POST" action="{{ url_for('inventory.add_entry') }}">
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="product_id" class="form-label">ID Producto</label>
+              <input type="number" class="form-control" id="product_id" name="product_id" required>
+            </div>
+            <div class="mb-3">
+              <label for="quantity" class="form-label">Cantidad</label>
+              <input type="number" class="form-control" id="quantity" name="quantity" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-success">Guardar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL MOVIMIENTO -->
+  <div class="modal fade" id="movementModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content shadow-lg">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Registrar Movimiento</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form method="POST" action="{{ url_for('inventory.add_movement') }}">
+          <div class="modal-body">
+            <input type="hidden" id="movement_product_id" name="product_id">
+            <p id="movement_product_name" class="fw-bold"></p>
+            <div class="mb-3">
+              <label for="movement_type" class="form-label">Tipo</label>
+              <select class="form-select" id="movement_type" name="movement_type" required>
+                <option value="entrada">Entrada</option>
+                <option value="salida">Salida</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="movement_quantity" class="form-label">Cantidad</label>
+              <input type="number" class="form-control" id="movement_quantity" name="quantity" required>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Pasar datos al modal de movimientos
+    var movementModal = document.getElementById('movementModal');
+    movementModal.addEventListener('show.bs.modal', function (event) {
+      var button = event.relatedTarget;
+      var productId = button.getAttribute('data-id');
+      var productName = button.getAttribute('data-name');
+
+      var inputId = movementModal.querySelector('#movement_product_id');
+      var productNameField = movementModal.querySelector('#movement_product_name');
+
+      inputId.value = productId;
+      productNameField.textContent = "Producto: " + productName;
+    });
+  </script>
+</body>
+</html>

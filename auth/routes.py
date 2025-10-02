@@ -3,6 +3,7 @@ from src.models import db, User
 
 auth_bp = Blueprint('auth', __name__)
 
+
 @auth_bp.route('/register', methods=['GET', 'POST'])
 def register():
     error = None
@@ -40,3 +41,4 @@ def logout():
     session.clear()
     flash('Sesión cerrada.', 'info')
     return redirect(url_for('home'))
+
