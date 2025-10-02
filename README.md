@@ -37,8 +37,9 @@ python -m venv .venv
 
 pip install -r requirements.txt
 
+## Diagrama de Base de Datos
 
-
+```mermaid
 erDiagram
     User {
         int id PK
