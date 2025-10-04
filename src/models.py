@@ -18,10 +18,6 @@ class Inventory(db.Model):
     # Relación con movimientos
     movements = db.relationship("Movement", backref="inventory", lazy=True)
 
-
-
-
-
 class Movement(db.Model):
     __tablename__ = "movements"
 
@@ -45,6 +41,15 @@ class Product(db.Model):
     # Relación con inventario
     inventory_id = db.Column(db.Integer, db.ForeignKey("inventory.id"), nullable=True)
     inventory = db.relationship("Inventory", backref="products")
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "description": self.description,
+            "price": self.price,
+            "category": self.category,
+            "available": self.available
+        }
        
 class Drink(db.Model):
     _tablename_ = "drinks"

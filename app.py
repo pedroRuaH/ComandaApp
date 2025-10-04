@@ -1,10 +1,10 @@
 # importar dependencias
 from flask import Flask
 from config import Config
-from src.models import db, Inventory, Product, Movement
-from Routes.auth.routes import auth_bp
-from Routes.main.routes import main_bp
-from Routes.inventory.routes import inventory_bp
+from src.models import db
+from routes.auth.routes import auth_bp
+from routes.main.routes import main_bp
+from routes.inventory.routes import inventory_bp
 from flask import render_template, redirect, url_for, session
 
 def create_app():
@@ -18,6 +18,10 @@ def create_app():
     app.register_blueprint(auth_bp)
     app.register_blueprint(main_bp)
     app.register_blueprint(inventory_bp)
+    from src.api.products import blueprint as products_bp
+
+    app.register_blueprint(products_bp, url_prefix="/products")
+
 
     @app.route('/', methods=['GET'])
     def home():
