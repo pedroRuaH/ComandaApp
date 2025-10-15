@@ -6,7 +6,8 @@ from flask import(
     url_for,
     flash
 )
-from src.models import db, User
+from src.extensions import db
+from src.models import User
 
 main_bp = Blueprint('main',__name__)
 
