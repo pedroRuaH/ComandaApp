@@ -1,7 +1,7 @@
 # importar dependencias
 from flask import Flask
 from config import Config
-from src.models import db
+from src.extensions import db
 from routes.auth.routes import auth_bp
 from routes.main.routes import main_bp
 from routes.inventory.routes import inventory_bp
