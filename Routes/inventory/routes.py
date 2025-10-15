@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
-from src.models import db, Inventory, Product, Movement
+from src.extensions import db
+from src.models import Inventory, Product, Movement
 
 inventory_bp = Blueprint("inventory", __name__, url_prefix="/inventory")
 

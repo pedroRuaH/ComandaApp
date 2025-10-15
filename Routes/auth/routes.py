@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, session, flash
-from src.models import db, User
+from src.extensions import db
+from src.models import User
 
 auth_bp = Blueprint('auth', __name__)
 

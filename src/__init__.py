@@ -1,6 +1,9 @@
+import click
 from flask import Flask
-# Import extensions lazily here once you add them.
-# from src.extensions import db
+from .models.product import Product
+from .models.user import User
+from .extensions import db, migrate
+
 
 def create_app(config_object: str | None = None) -> Flask:
     """"Create a Flask application using the app factory pattern."""
@@ -9,6 +12,7 @@ def create_app(config_object: str | None = None) -> Flask:
     _register_extensions(app)
     _register_blueprints(app)
     _register_error_handlers(app)
+    _register_cli(app)
     return app
 
 
@@ -25,7 +29,8 @@ def _load_config(app: Flask, config_object: str | None) -> None:
 
 def _register_extensions(app: Flask) -> None:
     """Register Flask extensions."""
-    # db.init_app(app)
+    db.init_app(app)
+    migrate.init_app(app, db)
     pass
 
 def _register_blueprints(app: Flask) -> None:
@@ -41,7 +46,23 @@ def _register_error_handlers(app: Flask) -> None:
     """Register error handlers."""
     pass
 
-    # Example error handler:
-    # @app.errorhandler(404)
-    # def not_found_error(error):
-    #     return render_template("404.html"), 404
+def _register_cli(app):
+    @app.cli.command("seed")
+    def seed():
+        """Seed the database with initial data."""
+        if User.query.first():
+            click.echo("Database already seeded.")
+            return
+
+        # Example users
+        user1 = User(username="admin", password="admin123")
+        user2 = User(username="mario", password="mario123")
+
+        # Example products
+        product1 = Product(name="Coca-Cola", description="Bebida gaseosa de cola", price=1.5, category="bebida", available=True)
+        product2 = Product(name="Hamburguesa", description="Hamburguesa con queso y lechuga", price=5.0, category="comida", available=True)
+
+        db.session.add_all([user1, user2, product1, product2])
+        db.session.commit()
+        click.echo("Database seeded!")
+
