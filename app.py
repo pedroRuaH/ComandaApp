@@ -1,16 +1,22 @@
 # importar dependencias
-from flask import Flask
+from flask import Flask, render_template, redirect, url_for, session
+from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
 from config import Config
 from src.extensions import db
+
+# importar blueprints
 from routes.auth.routes import auth_bp
 from routes.main.routes import main_bp
 from routes.inventory.routes import inventory_bp
-from flask import render_template, redirect, url_for, session
+from src.cli import register_seed_command
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
     db.init_app(app)
+    migrate = Migrate(app, db)
+    register_seed_command(app) 
 
     with app.app_context():
         db.create_all()

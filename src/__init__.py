@@ -1,9 +1,10 @@
-import click
+import os
 from flask import Flask
 from .models.product import Product
 from .models.user import User
 from .extensions import db, migrate
 
+import click
 
 def create_app(config_object: str | None = None) -> Flask:
     """"Create a Flask application using the app factory pattern."""

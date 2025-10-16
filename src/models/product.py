@@ -16,7 +16,11 @@ class Product(db.Model):
     available = db.Column(db.Boolean, default=True)    # Si está disponible
 
     # Relación con inventario
-    inventory_id = db.Column(db.Integer, db.ForeignKey("inventory.id"), nullable=True)
+    inventory_id = db.Column(
+    db.Integer,
+    db.ForeignKey("inventory.id", name="fk_product_inventory_inventory"),
+        nullable=True
+    )
     inventory = db.relationship("Inventory", backref="products")
     def to_dict(self):
         return {
